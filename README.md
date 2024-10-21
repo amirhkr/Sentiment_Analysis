@@ -2,20 +2,24 @@
 
 This is a web application for sentiment analysis using a pre-trained BERT model. The application allows users to input a review and get the sentiment (positive or negative) as a result.
 
+![alt text](img.png)
+
 ## Prerequisites
 
-- Python 3.12
-- Flask
-- PyTorch
-- Transformers
+- Python 3.12.4
+- Flask 3.0.3
+- PyTorch .2.2
+- Transformers 4.45.2
+- sklearn 1.5.2
+- numpy 1.26.0
 
 ## Setup
 
 1. **Clone the repository:**
 
     ```sh
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone git@github.com:amirhkr/Sentiment_Analysis.git
+    cd Sentiment_Analysis
     ```
 
 2. **Create a virtual environment:**
@@ -42,11 +46,13 @@ This is a web application for sentiment analysis using a pre-trained BERT model.
 
     ```sh
     pip install -r requirements.txt
-    ```
+      ```
 
-5. **Download the pre-trained model:**
+## Note: The pre-trained model verification
 
-    Ensure that the  file is in the root directory of the project. If not, download it and place it there.
+Ensure that the  pre-trained model is in this path <em>/model/model.pth</em>once the repo is cloned. If not, download it and place it there.
+
+Alternatively,you may want run <em>training.ipynb</em> Jupter notebook using the same virtual enviroment created above to train a new model which may take some time!
 
 ## Running the Application
 
@@ -72,7 +78,7 @@ This is a web application for sentiment analysis using a pre-trained BERT model.
 
 - `app.py`: Main application file containing the Flask app and sentiment prediction logic.
 - `templates/index.html`: HTML template for the web interface.
-- `model.pth`: Pre-trained BERT model for sentiment analysis.
+- `model/model.pth`: Pre-trained BERT model for sentiment analysis.
 - `requirements.txt`: List of required Python packages.
 
 ## License

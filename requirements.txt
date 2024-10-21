@@ -1,5 +1,6 @@
 torch
-numpy
-sklearn
+numpy==1.26.0
+scikit-learn
 transformers
 pandas
+Flasks
