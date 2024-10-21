@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            padding-top: 20px; /* Space from the top */
+            background-color: #444; /* Lighter dark gray background */
+            color: white; /* White text color */
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: white; /* Ensure title is white */
+        }
+        label {
+            margin-bottom: 10px;
+            color: white; /* Ensure label is white */
+        }
+        textarea {
+            width: 100%;
+            max-width: 500px; /* Maximum width for the textarea */
+            margin-bottom: 20px; /* Space below the textarea */
+            padding: 10px; /* Padding for better usability */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Border style */
+        }
+        button {
+            padding: 10px 20px; /* Button padding */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #4CAF50; /* Button color */
+            color: white; /* Text color */
+            cursor: pointer; /* Pointer on hover */
+        }
+        button:hover {
+            background-color: #45a049; /* Darker shade on hover */
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center; /* Center the result text */
+            color: white; /* Ensure result text is white */
+        }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <label for="review">Enter your review:</label>
+    <textarea id="review" rows="4" cols="50" placeholder="Type your review here..."></textarea>
+    <button id="submit-btn">Submit</button>
+    
+    <div class="result" id="result"></div>
+    
+    <script>
+        $(document).ready(function() {
+            $('#submit-btn').click(function() {
+                const review = $('#review').val();
+                
+                $.ajax({
+                    url: '/predict',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ review: review }),
+                    success: function(response) {
+                        $('#result').text("Sentiment: " + response.sentiment);
+                    },
+                    error: function() {
+                        $('#result').text("Error: Could not classify sentiment.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
