@@ -71,8 +71,15 @@
     <script>
         $(document).ready(function() {
             $('#submit-btn').click(function() {
-                const review = $('#review').val();
+                const review = $('#review').val().trim();
                 
+                // Check if the textarea is empty
+                if (review === "") {
+                    alert("Please enter a review before submitting.");
+                    return; // Stop further execution
+                }
+                
+                // Make the AJAX call if the textarea is not empty
                 $.ajax({
                     url: '/predict',
                     type: 'POST',
