@@ -50,7 +50,7 @@ This is a web application for sentiment analysis using a pre-trained BERT model.
 
 ## Note: The pre-trained model verification
 
-Ensure that the  pre-trained model is in this path <em>/model/model.pth</em>once the repo is cloned. If not, download it and place it there.
+Ensure that the  pre-trained model is in this path <em>/model/model.pth</em> once the repo is cloned. If not, download it and place it there.
 
 Alternatively, you may want run <em>notebook/training.ipynb</em> Jupter notebook using the same virtual enviroment created above to train a new model which may take some time!
 
