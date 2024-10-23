@@ -30,7 +30,7 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 # Ensure the model is loaded correctly
 try:
-    model = torch.load('model/model.pth')
+    model = torch.load('../model/model.pth')
     model.eval()
 except Exception as e:
     print(f"Error loading model: {e}")

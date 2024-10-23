@@ -8,7 +8,7 @@ This is a web application for sentiment analysis using a pre-trained BERT model.
 
 - Python 3.12.4
 - Flask 3.0.3
-- PyTorch .2.2
+- PyTorch 2.2.2
 - Transformers 4.45.2
 - sklearn 1.5.2
 - numpy 1.26.0
