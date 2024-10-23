@@ -59,7 +59,8 @@ Alternatively, you may want run <em>notebook/training.ipynb</em> Jupter notebook
 1. **Start the Flask application:**
 
     ```sh
-    python app/app.py
+    cd app
+    python app.py
     ```
 
 2. **Open your web browser and navigate to:**
